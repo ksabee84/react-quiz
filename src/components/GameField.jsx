@@ -23,11 +23,20 @@ const levels = [
     {id: 5, text: "Nagyon nehéz", value: "5", checked: false}
 ];
 
-function StartQuiz() {
+function GameField() {
     const [questionCategories, setQuestionCategories] = useState(categories);
     const [questionLevels, setQuestionLevels] = useState(levels);
+    const [questionQuantity, setQuestionQuantity] = useState(10);
     const [showGame, setShowGame] = useState(false);
+    const [score, setScore] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     
+    const restartQuiz = () => {
+        setShowGame(false);
+        setScore(0);
+        setCurrentIndex(0);
+      };
+
     const toggleCategories = (id) => {
         setQuestionCategories((prevCategories) =>
             prevCategories.map((item) =>
@@ -41,13 +50,28 @@ function StartQuiz() {
                 item.id === id ? {...item, checked: !item.checked} : item
         ));
     }
+
+    const toggleQuantities = (id) => {
+        setQuestionQuantity((prevQuantities) =>
+            prevQuantities.map((item) =>
+                item.id === id ? {...item, checked: !item.checked} : item
+        ));
+    }
     
     const selectAllCategories = () => {
         setQuestionCategories((prevCategories) => prevCategories.map((item) => ({...item, checked: true})));
-    };
+    }
 
     const selectNoCategories = () => {
         setQuestionCategories((prevCategories) => prevCategories.map((item) => ({...item, checked: false})));
+    }
+
+    const selectAllLevels = () => {
+        setQuestionLevels((prevLevels) => prevLevels.map((item) => ({...item, checked: true})));
+    }
+
+    const selectNoLevels = () => {
+        setQuestionLevels((prevLevels) => prevLevels.map((item) => ({...item, checked: false})));
     }
 
     const selectedCategories = questionCategories.filter((item) => item.checked).map((item) => item.text);
@@ -64,7 +88,10 @@ function StartQuiz() {
     return(
         <div className="container text-center my-4">
             {showGame ? (
-                <Quiz selectedCategories={selectedCategories} selectedLevels={selectedLevels}/>
+                <Quiz selectedCategories={selectedCategories}
+                selectedLevels={selectedLevels}
+                restartQuiz={restartQuiz}
+                />
             ) : (
                 <>
                     <div className="row justify-content-center mb-4">
@@ -96,21 +123,21 @@ function StartQuiz() {
                                     type="radio"
                                     className="btn-check"
                                     name="btnradio"
-                                    id="checkAll"
+                                    id="checkAllCategories"
                                     autoComplete="off"
                                     onClick={selectAllCategories}
                                 />
-                                <label className="btn btn-outline-warning" htmlFor="checkAll">Mindegyiket</label>
+                                <label className="btn btn-outline-warning" htmlFor="checkAllCategories">Mindegyiket</label>
 
                                 <input
                                     type="radio"
                                     className="btn-check"
                                     name="btnradio"
-                                    id="checkNone"
+                                    id="checkNoCategory"
                                     autoComplete="off"
                                     onClick={selectNoCategories}
                                 />
-                                <label className="btn btn-outline-warning" htmlFor="checkNone">Egyiket sem</label>
+                                <label className="btn btn-outline-warning" htmlFor="checkNoCategory">Egyiket sem</label>
                             </div>
                         </div>
                     
@@ -135,7 +162,52 @@ function StartQuiz() {
                                     </button>
                                 ))}
                             </div>
+
+                            <div className="btn-group mt-2 col-12" role="group" aria-label="Toggle levels">
+                                <input
+                                    type="radio"
+                                    className="btn-check"
+                                    name="btnradio"
+                                    id="checkAllLevels"
+                                    autoComplete="off"
+                                    onClick={selectAllLevels}
+                                />
+                                <label className="btn btn-outline-warning" htmlFor="checkAllLevels">Mindegyiket</label>
+
+                                <input
+                                    type="radio"
+                                    className="btn-check"
+                                    name="btnradio"
+                                    id="checkNoLevel"
+                                    autoComplete="off"
+                                    onClick={selectNoLevels}
+                                />
+                                <label className="btn btn-outline-warning" htmlFor="checkNoLevel">Egyiket sem</label>
+                            </div>
                         </div>
+                    </div>
+
+                    <div id="questionQuantityDiv" className="col-12 col-md-3 mx-auto">
+                            <h4 className="text-warning border border-warning py-2">
+                                Hány kérdés legyen?
+                            </h4>
+                            <div className="btn-group d-flex flex-column gap-1" role="group" aria-label="Quantity selection">
+                                {[10, 20, 50, 100].map((quantity) => (
+                                    //console.log(quantity)
+
+                                    <label key={quantity} className="btn btn-outline-warning">
+                                        <input
+                                            type="radio"
+                                            name="questionQuantity"
+                                            value={quantity}
+                                            checked={questionQuantity === quantity}
+                                            onChange={() => setQuestionQuantity(quantity)}
+                                            className="btn-check"
+                                        />
+                                            {quantity}
+                                    </label>
+                                ))}
+                            </div>
                     </div>
 
                     <div id="startQuizButtonDiv" className="row justify-content-center">
@@ -157,4 +229,4 @@ function StartQuiz() {
     );
 }
 
-export default StartQuiz;
+export default GameField;

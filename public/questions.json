@@ -3727,7 +3727,7 @@
       "answers": [
          {
             "text": "Amazonas",
-            "isCorrect": false
+            "isCorrect": true
          },
          {
             "text": "Mississippi",
@@ -3735,7 +3735,7 @@
          },
          {
             "text": "Nílus",
-            "isCorrect": true
+            "isCorrect": false
          },
          {
             "text": "Volga",
@@ -6866,7 +6866,7 @@
    {
       "id": 287,
       "category": "Sport",
-      "question": "Minumum hány kilométer egy átlagos Forma-1-es verseny távja?",
+      "question": "Minimum hány kilométer egy átlagos Forma-1-es verseny távja?",
       "level": "4",
       "answers": [
          {
@@ -9674,7 +9674,7 @@
    {
       "id": 404,
       "category": "Film és TV",
-      "question": "Melyik évben indult az új Dallas sorozat?",
+      "question": "Melyik évben indult az új Dallas-sorozat?",
       "level": "4",
       "answers": [
          {
@@ -28373,54 +28373,750 @@
    },
    {
       "id": 1183,
-      "category": "",
-      "question": "?",
-      "level": "",
+      "category": "Tudomány és technika",
+      "question": "Melyik nem egy magyar mozdonysorozat?",
+      "level": "5",
       "answers": [
          {
-            "text": "",
-            "isCorrect": false
-         },
-         {
-            "text": "",
-            "isCorrect": false
-         },
-         {
-            "text": "",
+            "text": "BR232",
             "isCorrect": true
          },
          {
-            "text": "",
+            "text": "M41",
+            "isCorrect": false
+         },
+         {
+            "text": "M63",
+            "isCorrect": false
+         },
+         {
+            "text": "V43",
             "isCorrect": false
          }
       ]
    },
    {
       "id": 1184,
-      "category": "",
-      "question": "?",
-      "level": "",
+      "category": "Tudomány és technika",
+      "question": "Hány vasúti fejpályaudvar működik Budapesten?",
+      "level": "4",
       "answers": [
          {
-            "text": "",
+            "text": "2",
             "isCorrect": false
          },
          {
-            "text": "",
-            "isCorrect": false
-         },
-         {
-            "text": "",
+            "text": "3",
             "isCorrect": true
          },
          {
-            "text": "",
+            "text": "4",
+            "isCorrect": false
+         },
+         {
+            "text": "5",
             "isCorrect": false
          }
       ]
    },
    {
       "id": 1185,
+      "category": "Tudomány és technika",
+      "question": "Milyen építészeti stílusban hozták létre a budapesti Keleti pályaudvart?",
+      "level": "5",
+      "answers": [
+         {
+            "text": "barokk",
+            "isCorrect": false
+         },
+         {
+            "text": "eklektikus",
+            "isCorrect": true
+         },
+         {
+            "text": "neoklasszicista",
+            "isCorrect": false
+         },
+         {
+            "text": "szecessziós",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1186,
+      "category": "Irodalom és kultúra",
+      "question": "Melyik épület nem gótikus stílusban épült?",
+      "level": "4",
+      "answers": [
+         {
+            "text": "diósgyóri vár",
+            "isCorrect": false
+         },
+         {
+            "text": "Mátyás-templom",
+            "isCorrect": false
+         },
+         {
+            "text": "Miskolci Nemzeti Színház",
+            "isCorrect": true
+         },
+         {
+            "text": "soproni Tűztorony",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1187,
+      "category": "Irodalom és kultúra",
+      "question": "Milyen építészeti stílusban alkották meg a budapesti Mátyás-templomot?",
+      "level": "4",
+      "answers": [
+         {
+            "text": "gótikus",
+            "isCorrect": true
+         },
+         {
+            "text": "klasszicista",
+            "isCorrect": false
+         },
+         {
+            "text": "neoklasszicista",
+            "isCorrect": false
+         },
+         {
+            "text": "román",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1188,
+      "category": "Földrajz",
+      "question": "Melyik városban találhatók a következő helyszínek: Károly-kilátó, Lenck-villa, Tűztorony?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Debrecen",
+            "isCorrect": false
+         },
+         {
+            "text": "Sopron",
+            "isCorrect": true
+         },
+         {
+            "text": "Székesfehérvár",
+            "isCorrect": false
+         },
+         {
+            "text": "Veszprém",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1189,
+      "category": "Sport",
+      "question": "Melyik versenyző nyerte el a Forma-1-es egyéni világbajnoki címet 2024-ben?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Lando Norris",
+            "isCorrect": false
+         },
+         {
+            "text": "Lewis Hamilton",
+            "isCorrect": false
+         },
+         {
+            "text": "Max Verstappen",
+            "isCorrect": true
+         },
+         {
+            "text": "Sebastian Vettel",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1190,
+      "category": "Sport",
+      "question": "Melyik Forma-1-es csapat szerezte meg a 2024-es konstruktőri világbajnoki címet?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Ferrari",
+            "isCorrect": false
+         },
+         {
+            "text": "McLaren",
+            "isCorrect": true
+         },
+         {
+            "text": "Red Bull",
+            "isCorrect": false
+         },
+         {
+            "text": "Williams",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1191,
+      "category": "Sport",
+      "question": "Hány évet követően nyerte el ismét 2024-ben a Forma-1-es konstruktőri világbajnoki címet a McLaren csapat?",
+      "level": "5",
+      "answers": [
+         {
+            "text": "20",
+            "isCorrect": false
+         },
+         {
+            "text": "26",
+            "isCorrect": true
+         },
+         {
+            "text": "30",
+            "isCorrect": false
+         },
+         {
+            "text": "34",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1192,
+      "category": "Sport",
+      "question": "Melyik Forma-1-es versenyző nem brit nemzetiségű?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Damon Hill",
+            "isCorrect": false
+         },
+         {
+            "text": "David Coulthard",
+            "isCorrect": false
+         },
+         {
+            "text": "Lewis Hamilton",
+            "isCorrect": false
+         },
+         {
+            "text": "Max Verstappen",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1193,
+      "category": "Sport",
+      "question": "Melyik jelenlegi Forma-1-es csapat nem a mostani nevével indult el a Forma-1-ben?",
+      "level": "4",
+      "answers": [
+         {
+            "text": "Aston Martin",
+            "isCorrect": false
+         },
+         {
+            "text": "Ferrari",
+            "isCorrect": false
+         },
+         {
+            "text": "McLaren",
+            "isCorrect": false
+         },
+         {
+            "text": "Williams",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1194,
+      "category": "Földrajz",
+      "question": "Hány óceán van a Földön?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "2",
+            "isCorrect": false
+         },
+         {
+            "text": "3",
+            "isCorrect": false
+         },
+         {
+            "text": "4",
+            "isCorrect": false
+         },
+         {
+            "text": "5",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1195,
+      "category": "Tudomány és technika",
+      "question": "Melyik mértékegységet használjuk az áramerősség mérésére?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "Amper",
+            "isCorrect": true
+         },
+         {
+            "text": "Newton",
+            "isCorrect": false
+         },
+         {
+            "text": "Volt",
+            "isCorrect": false
+         },
+         {
+            "text": "Watt",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1196,
+      "category": "Földrajz",
+      "question": "Melyik a hatodik bolygó a Naptól?",
+      "level": "4",
+      "answers": [
+         {
+            "text": "Jupiter",
+            "isCorrect": false
+         },
+         {
+            "text": "Merkúr",
+            "isCorrect": false
+         },
+         {
+            "text": "Szaturnusz",
+            "isCorrect": true
+         },
+         {
+            "text": "Vénusz",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1197,
+      "category": "Tudomány és technika",
+      "question": "Melyik kémiai elem vegyjele az Ag?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "arany",
+            "isCorrect": false
+         },
+         {
+            "text": "argon",
+            "isCorrect": false
+         },
+         {
+            "text": "ezüst",
+            "isCorrect": true
+         },
+         {
+            "text": "vas",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1198,
+      "category": "Tudomány és technika",
+      "question": "Hány méter 1,3 kilométer?",
+      "level": "1",
+      "answers": [
+         {
+            "text": "13",
+            "isCorrect": false
+         },
+         {
+            "text": "130",
+            "isCorrect": false
+         },
+         {
+            "text": "1300",
+            "isCorrect": true
+         },
+         {
+            "text": "13000",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1199,
+      "category": "Tudomány és technika",
+      "question": "Hogy írjuk arab számmal a római LXVIII számot?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "68",
+            "isCorrect": true
+         },
+         {
+            "text": "118",
+            "isCorrect": false
+         },
+         {
+            "text": "608",
+            "isCorrect": false
+         },
+         {
+            "text": "1108",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1200,
+      "category": "Irodalom és kultúra",
+      "question": "Hogy nevezzük, mikor a szavak betűinek sorrendjét úgy változtatjuk meg, hogy az eredmény szintén értelmes szó legyen?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "anagramma",
+            "isCorrect": true
+         },
+         {
+            "text": "epigramma",
+            "isCorrect": false
+         },
+         {
+            "text": "rím",
+            "isCorrect": false
+         },
+         {
+            "text": "szinoníma",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1201,
+      "category": "Tudomány és technika",
+      "question": "Hogyan nevezzük azt az anyagot, aminek a segítségével a napfényt éltető energiává alakítják a növények?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "kármin",
+            "isCorrect": false
+         },
+         {
+            "text": "klorofill",
+            "isCorrect": true
+         },
+         {
+            "text": "kloroform",
+            "isCorrect": false
+         },
+         {
+            "text": "lakmusz",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1202,
+      "category": "Tudomány és technika",
+      "question": "Hány liter egy hektoliter?",
+      "level": "1",
+      "answers": [
+         {
+            "text": "10",
+            "isCorrect": false
+         },
+         {
+            "text": "100",
+            "isCorrect": true
+         },
+         {
+            "text": "1000",
+            "isCorrect": false
+         },
+         {
+            "text": "100000",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1203,
+      "category": "Élővilág",
+      "question": "Melyik szervünk termeli az epét?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "hasnyálmirigy",
+            "isCorrect": false
+         },
+         {
+            "text": "máj",
+            "isCorrect": true
+         },
+         {
+            "text": "tüdő",
+            "isCorrect": false
+         },
+         {
+            "text": "vese",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1204,
+      "category": "Földrajz",
+      "question": "Minek köszönhető az évszakok váltakozása?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "A Föld és Hold közötti távolság váltakozásának",
+            "isCorrect": false
+         },
+         {
+            "text": "A Föld és a Nap közötti távolság váltakozásának",
+            "isCorrect": false
+         },
+         {
+            "text": "A Föld saját tengelye körüli forgásának",
+            "isCorrect": false
+         },
+         {
+            "text": "A Föld tengelyferdeségének",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1205,
+      "category": "Földrajz",
+      "question": "Milyen pályán kering a Nap körül a Föld?",
+      "level": "1",
+      "answers": [
+         {
+            "text": "elliptikus (ovális)",
+            "isCorrect": true
+         },
+         {
+            "text": "kör",
+            "isCorrect": false
+         },
+         {
+            "text": "nincs állandó pályája",
+            "isCorrect": false
+         },
+         {
+            "text": "S-alakú",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1206,
+      "category": "Irodalom és kultúra",
+      "question": "Az alábbi szavak közül melyik van helyesen írva?",
+      "level": "1",
+      "answers": [
+         {
+            "text": "süjjed",
+            "isCorrect": false
+         },
+         {
+            "text": "süljed",
+            "isCorrect": false
+         },
+         {
+            "text": "sülyed",
+            "isCorrect": false
+         },
+         {
+            "text": "süllyed",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1207,
+      "category": "Tudomány és technika",
+      "question": "Hány kromoszómája van egy embernek?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "40",
+            "isCorrect": false
+         },
+         {
+            "text": "44",
+            "isCorrect": false
+         },
+         {
+            "text": "46",
+            "isCorrect": true
+         },
+         {
+            "text": "50",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1208,
+      "category": "Földrajz",
+      "question": "Melyik évben minősítették le törpebolygóvá a Plútót?",
+      "level": "5",
+      "answers": [
+         {
+            "text": "2000",
+            "isCorrect": false
+         },
+         {
+            "text": "2006",
+            "isCorrect": true
+         },
+         {
+            "text": "2010",
+            "isCorrect": false
+         },
+          {
+            "text": "2020",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1209,
+      "category": "Film és TV",
+      "question": "Melyik színész nem játszik \"A mi kis falunk\" című sorozatban?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Kerekes József",
+            "isCorrect": false
+         },
+         {
+            "text": "Schumacher Vanda",
+            "isCorrect": true
+         },
+         {
+            "text": "Szabó Győző",
+            "isCorrect": false
+         },
+         {
+            "text": "Udvaros Dorottya",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1210,
+      "category": "Sport",
+      "question": "A magyar labdarúgó válogatott melyik tagja nem lőtt gólt az Anglia ellen játszott, híres 6:3-as mérkőzésen?",
+      "level": "5",
+      "answers": [
+         {
+            "text": "Bozsik József",
+            "isCorrect": false
+         },
+         {
+            "text": "Buzánszky Jenő",
+            "isCorrect": true
+         },
+         {
+            "text": "Hidegkuti Nándor",
+            "isCorrect": false
+         },
+         {
+            "text": "Puskás Ferenc",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1211,
+      "category": "Sport",
+      "question": "Melyik nem egy görög futballcsapat?",
+      "level": "2",
+      "answers": [
+         {
+            "text": "Borussia Dortmund",
+            "isCorrect": true
+         },
+         {
+            "text": "Olympiacos FC",
+            "isCorrect": false
+         },
+         {
+            "text": "Panathinaikosz FC",
+            "isCorrect": false
+         },
+         {
+            "text": "PAOK FC",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1212,
+      "category": "Film és TV",
+      "question": "Melyik filmben nem játszott Reese Witherspoon?",
+      "level": "3",
+      "answers": [
+         {
+            "text": "Doktor Szöszi",
+            "isCorrect": false
+         },
+         {
+            "text": "Kegyetlen játékok",
+            "isCorrect": false
+         },
+         {
+            "text": "Négy karácsony",
+            "isCorrect": false
+         },
+         {
+            "text": "Szahara",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1213,
+      "category": "Film és TV",
+      "question": "Melyik telenovellában nem szerepelt a mexikói színész, Fernando Colunga?",
+      "level": "4",
+      "answers": [
+         {
+            "text": "A csábítás földjén",
+            "isCorrect": false
+         },
+         {
+            "text": "Esmeralda",
+            "isCorrect": false
+         },
+         {
+            "text": "Paula és Paulina",
+            "isCorrect": false
+         },
+         {
+            "text": "Vad angyal",
+            "isCorrect": true
+         }
+      ]
+   },
+   {
+      "id": 1214,
       "category": "",
       "question": "?",
       "level": "",
@@ -28444,7 +29140,31 @@
       ]
    },
    {
-      "id": 1186,
+      "id": 1215,
+      "category": "",
+      "question": "?",
+      "level": "",
+      "answers": [
+         {
+            "text": "",
+            "isCorrect": false
+         },
+         {
+            "text": "",
+            "isCorrect": false
+         },
+         {
+            "text": "",
+            "isCorrect": true
+         },
+         {
+            "text": "",
+            "isCorrect": false
+         }
+      ]
+   },
+   {
+      "id": 1216,
       "category": "",
       "question": "?",
       "level": "",

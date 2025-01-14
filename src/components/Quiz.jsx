@@ -8,7 +8,7 @@ const levelMapping = {
   "Nagyon nehéz" : "5"
 };
 
-function Quiz({selectedCategories, selectedLevels}) {
+function Quiz({selectedCategories, selectedLevels, restartQuiz}) {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -140,6 +140,19 @@ const stopTickingSound = () => {
 
   const currentQuestion = questions[currentIndex];
 
+  const getResultMessage = () => {
+    const totalQuestions = questions.length;
+    const rightAnswersRate = (score / totalQuestions) * 100;
+
+    if (rightAnswersRate === 100) {
+      return "Minden válasz helyes! Te egy zseni vagy!";
+    } else if (rightAnswersRate >= 50) {
+      return "Ne add fel, megy ez neked!";
+    } else {
+      return "Még van mit gyakorolnod...";
+    }
+  };
+
     return(
         <>
         <div id="questionDiv" className="col-xs-11 col-12 mx-auto my-2 rounded">
@@ -203,19 +216,36 @@ const stopTickingSound = () => {
 
               <div
                id="pointsDiv"
-               className="col-3 mx-auto mb-3 bg-info text-center rounded shadow fs-4">
+               className="col-2 mx-auto mb-3 bg-info text-center rounded shadow fs-4">
                   <span id="noOfQuestFooter">{questions.length}</span>/<span id="points">{score}</span> pont
               </div>
               
+              {currentIndex + 1 === questions.length && (
+                <div id="resultMessageDiv" className="col-4 mx-auto text-center bg-success fs-3 text-ligth my-3">
+                  <p>{getResultMessage()}</p>
+                </div>
+              )}
+
               <div id="nextBtnDiv" className="col-7 mx-auto text-center fs-4">
-                <button
-                  id="nextBtn"
-                  type="submit"
-                  className="btn btn-primary btn-lg fs-4"
-                  onClick={nextQuestion}
-                >
-                  Kérem a következő kérdést!
-                </button>
+                {currentIndex + 1 === questions.length ? (
+                  <button
+                    id="nextBtn"
+                    type="submit"
+                    className="btn btn-primary btn-lg fs-4"
+                    onClick={restartQuiz}
+                  >
+                    Új játék!
+                  </button>
+                ) : (
+                  <button
+                    id="nextBtn"
+                    type="submit"
+                    className="btn btn-primary btn-lg fs-4"
+                    onClick={nextQuestion}
+                  >
+                    Kérem a következő kérdést!
+                  </button>
+                )} 
               </div>
           </>
         )}
