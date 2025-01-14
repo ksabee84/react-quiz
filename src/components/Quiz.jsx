@@ -1,15 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const levelMapping = {
-  "Nagyon könnyű": "1",
-  "Könnyű": "2",
-  "Közepes": "3",
-  "Nehéz": "4",
-  "Nagyon nehéz" : "5"
-};
-
-function Quiz({selectedCategories, selectedLevels, restartQuiz}) {
-  const [questions, setQuestions] = useState([]);
+function Quiz({questions, restartQuiz}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -22,61 +13,7 @@ function Quiz({selectedCategories, selectedLevels, restartQuiz}) {
   const correctAnswerSoundRef = useRef(new Audio("/sounds/correctanswer.mp3"));
   const wrongAnswerSoundRef = useRef(new Audio("/sounds/wronganswer.mp3"));
   
-  const shuffleArray = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
-
-  useEffect(() => {
-    const tickingSound = tickingSoundRef.current;
-    tickingSound.loop = true;
-    
-    fetch("/questions.json")
-      .then((response) => {
-        if(!response.ok) {
-          throw new Error("A hálózat nem válaszol!");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const selectedNumericLevels = selectedLevels.map((level) => levelMapping[level] || null).filter((numericLevel) => numericLevel !== null);
-
-        //console.log("Fetched questions: ", data);
-        console.log("Selected levels: ", selectedLevels);
-        console.log("selected numeric levels: ", selectedNumericLevels);
-
-        const filteredQuestions = data.filter((question) => {
-          const categoryMatch = selectedCategories.some(
-            (category) => category.trim().toLowerCase() === question.category.trim().toLowerCase());
-          
-          const levelMatch = selectedNumericLevels.some(
-            (numericLevel) => numericLevel.trim() === question.level.trim());
-            
-            //console.log("question: ", question.question);
-            //console.log("category match: ", categoryMatch);
-            //console.log("level match: ", levelMatch);
-            //console.log("pass filter: ", categoryMatch && levelMatch);
-        return categoryMatch && levelMatch;
-      });
-
-        console.log("Filtered questions:", filteredQuestions);
-        setQuestions(filteredQuestions);
-
-        const shuffledQuestions = shuffleArray(filteredQuestions);
-        //console.log("Random kérdések: ", shuffledQuestions);
-
-        if(filteredQuestions.length === 0) {
-          console.error("Nincs a kategóriának vagy szintnek megfelelő kérdés!");
-        };
-
-        setQuestions(shuffledQuestions);
-      })
-      .catch((error) => {console.error("Nem sikerült az adatok betöltése!", error);
-  });
-
-    return () => tickingSound.pause();
-  }, [selectedCategories, selectedLevels]);
-
-const stopTickingSound = () => {
+  const stopTickingSound = () => {
     const tickingSound = tickingSoundRef.current;
     tickingSound.pause();
     tickingSound.currentTime = 0;
@@ -85,10 +22,11 @@ const stopTickingSound = () => {
   useEffect(() => {
     const tickingSound = tickingSoundRef.current;
     const wrongAnswerSound = wrongAnswerSoundRef.current;
-
+    tickingSound.loop = true;
+    
     if(timerRunning && timer > 0) {
+      const countdown = setInterval(() => setTimer(prev => prev - 1), 100);
       tickingSound.play();
-      const countdown = setInterval(() => setTimer((prev) => prev - 1), 100);
       return () => clearInterval(countdown);
     } else if (timer === 0 && !showResult) {
       stopTickingSound();
@@ -107,36 +45,32 @@ const stopTickingSound = () => {
     }
   }, [currentIndex, questions]);
   
-  const nextQuestion = () => {
-    setSelectedAnswer(null);
-    setShowResult(false);
-    setTimer(150);
-    setTimeOver(false);
-    if(currentIndex < questions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
   const handleAnswer = (isCorrect) => {
     const correctAnswerSound = correctAnswerSoundRef.current;
     const wrongAnswerSound = wrongAnswerSoundRef.current;
-
-    stopTickingSound();
+    
     setTimerRunning(false);
-    setSelectedAnswer(isCorrect);
     setShowResult(true);
+    setSelectedAnswer(isCorrect);
+    stopTickingSound();
     setTimeOver(false);
     if(isCorrect) {
       correctAnswerSound.play();
-      setScore(score + 1);
+      setScore(prev => prev + 1);
     } else {
       wrongAnswerSound.play();
     }
   };
 
-  if(questions.length === 0) {
-    return <div>Kérdések betöltése...</div>
-  }
+const nextQuestion = () => {
+    setSelectedAnswer(null);
+    setShowResult(false);
+    setTimer(150);
+    setTimerRunning(true);
+    if(currentIndex < questions.length - 1) {
+      setCurrentIndex(prev => prev + 1);
+    }
+  };
 
   const currentQuestion = questions[currentIndex];
 
